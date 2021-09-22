@@ -1,0 +1,6 @@
+---
+name: app_job
+release: example-bosh-release
+manifest: |
+  app:
+    response_body: (( .app_vm.response_body.value ))

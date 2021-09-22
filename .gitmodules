@@ -1,0 +1,3 @@
+[submodule "src/example-bosh-release"]
+	path = src/example-bosh-release
+	url = https://github.com/iplay88keys/example-bosh-release

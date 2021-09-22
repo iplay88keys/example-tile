@@ -1,0 +1,31 @@
+---
+name: example-tile
+product_version: $( version )
+metadata_version: '1.0'
+label: Example Tile
+rank: 1
+service_broker: false
+
+stemcell_criteria:
+  os: ubuntu-xenial
+  version: $( variable "stemcell_version" )
+  requires_cpi: false
+  enable_patch_security_updates: true
+
+releases:
+  - $( release "example-bosh-release" )
+  - $( release "bpm" )
+
+job_types:
+  - $( instance_group "app_vm" )
+
+form_types:
+  - $( form "app_config" )
+
+pre_delete_errands: []
+
+property_blueprints: []
+
+variables: []
+
+post_deploy_errands: []

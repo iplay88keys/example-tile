@@ -1,0 +1,49 @@
+name: app_vm
+resource_label: App VM
+description: The App VM
+templates:
+  - $( job "app_job" )
+  - $( job "bpm" )
+
+resource_definitions:
+- name: cpu
+  type: integer
+  label: CPU
+  configurable: true
+  default: 4
+
+- name: ram
+  type: integer
+  label: RAM
+  configurable: true
+  default: 16384
+
+- name: ephemeral_disk
+  type: integer
+  label: Ephemeral Disk
+  configurable: true
+  default: 5120
+
+- name: persistent_disk
+  type: integer
+  label: Persistent Disk
+  configurable: true
+  default: 512000
+  constraints:
+    min: 1024
+
+max_in_flight: 1
+single_az_only: false
+
+instance_definition:
+  name: instances
+  type: integer
+  label: Instances
+  configurable: false
+  default: 1
+
+property_blueprints:
+  - name: response_body
+    type: string
+    configurable: true
+    optional: false

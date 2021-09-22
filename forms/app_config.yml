@@ -1,0 +1,7 @@
+name: app_config
+label: Go App Configuration
+description: Go App Configuration
+property_inputs:
+  - reference: .app_vm.response_body
+    label: Response Body
+    description: The response body that is returned when the api is called.
